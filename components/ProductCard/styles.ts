@@ -6,7 +6,6 @@ export const CardContainer = styled.div`
   flex-direction: column;
   width: 250px;
   background-color: honeydew;
-  padding: 20px;
   position: relative;
   border: 1px solid #eee;
   border-radius: 4px;
@@ -43,16 +42,33 @@ export const Button = styled.button`
   align-items: center;
   text-transform: uppercase;
   border-radius: 20px;
-  padding: 5px 20px;
+  padding: 5px 12px;
   font-weight: 600;
   background-color: #333333;
   color: #ffffff;
   border: none;
-  margin: 0 30px;
+  font-size: 13px;
 `;
-export const Text = styled.p``;
+export const Text = styled.p`
+  text-align: center;
+`;
 export const Title = styled.h5`
   text-align: center;
-  margin-top: 50px;
+  margin-top: 20px;
   font-size: 18px;
+  margin-bottom: 0;
+`;
+
+export const ImageContainer = styled.div`
+  position: relative;
+  margin: 0 auto;
+  margin-top: 10px;
+`;
+
+export const TextContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 20px;
+  margin-bottom: 20px;
 `;

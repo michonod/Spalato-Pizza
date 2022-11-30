@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Past from "../components/PastSection/Past";
 import Main from "../components/Section/Main";
 import PizzaSection from "../components/Section/PizzaSection";
 import styles from "../styles/Home.module.css";
@@ -13,6 +14,7 @@ export default function Home() {
       </Head>
       <Main />
       <PizzaSection />
+      <Past />
     </div>
   );
 }

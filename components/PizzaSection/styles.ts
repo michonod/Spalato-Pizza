@@ -11,3 +11,11 @@ export const Heading = styled.h3`
   width: 70%;
   border-bottom: 2px solid black;
 `;
+
+export const Flex = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 80%;
+`;
