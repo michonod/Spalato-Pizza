@@ -7,6 +7,7 @@ export const Nav = styled.nav`
   border: 1px solid #1f1f1f;
   margin-top: 50px;
   background-color: white;
+  padding: 15px;
 `;
 export const Ul = styled.ul`
   display: flex;

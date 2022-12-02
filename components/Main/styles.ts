@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const MainContainer = styled.div`
-  line-height: 35px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -35,5 +34,5 @@ export const H3 = styled.h3`
   text-transform: uppercase;
   font-weight: 500;
   font-size: 38px;
-  color: #804040;
+  color: #494949;
 `;

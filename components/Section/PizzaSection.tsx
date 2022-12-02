@@ -1,13 +1,9 @@
 import React from "react";
-import Pizza from "../PizzaSection/Pizza";
+import ProductSection from "../ProductSection/ProductSection";
 import { PizzaContainer } from "./styles";
 
 const PizzaSection = () => {
-  return (
-    <PizzaContainer>
-      <Pizza />
-    </PizzaContainer>
-  );
+  return;
 };
 
 export default PizzaSection;

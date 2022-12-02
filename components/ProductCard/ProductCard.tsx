@@ -1,6 +1,5 @@
 import { UserOutlined } from "@ant-design/icons";
 import { Avatar } from "antd";
-import custom from "../../assets/pizzas/custom.jpg";
 import Image from "next/image";
 import React from "react";
 import {
@@ -14,27 +13,34 @@ import {
   ImageContainer,
   TextContainer,
 } from "./styles";
+import { ProductTypes } from "./types";
+import { getPrice } from "../../utils/getPrice";
 
-const ProductCard = () => {
+const ProductCard = ({
+  description,
+  image,
+  priceFrom,
+  priceTo,
+  title,
+  icon,
+  currency,
+}: ProductTypes) => {
   return (
     <>
       <CardContainer>
         <ImageContainer>
-          <Image width={220} height={220} src={custom} alt="pizza" />
+          <Image width={220} height={220} src={image} alt="pizza" />
         </ImageContainer>
         <Flex>
-          <Price>460ден-550ден</Price>
+          <Price>{getPrice({ currency, priceFrom, priceTo })}</Price>
 
           <AbsoluteContainer>
             <Avatar icon={<UserOutlined />} size={50} />
           </AbsoluteContainer>
         </Flex>
         <TextContainer>
-          <Title>Костарика Пица</Title>
-          <Text>
-            доматен сос, кашкавал, печурки, шунка, маслинки, свински врат,
-            кулен, павлака, оригано, сусам
-          </Text>
+          <Title>{title}</Title>
+          <Text>{description}</Text>
           <Button>Нарачај веднаш</Button>
         </TextContainer>
       </CardContainer>

@@ -48,6 +48,8 @@ export const Button = styled.button`
   color: #ffffff;
   border: none;
   font-size: 13px;
+  margin-top: 15px;
+  border: none;
 `;
 export const Text = styled.p`
   text-align: center;
