@@ -20,8 +20,13 @@ import {
   DivContainer,
 } from "./styles";
 import past from "../../assets/pizzas/stipska.jpg";
-
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "../../assets/store/store";
+import { increment, decrement } from "../../assets/store/useCart";
 const Past = () => {
+  const counter = useSelector((state: RootState) => state.amount.value);
+  const dispatch = useDispatch();
+
   return (
     <DivContainer>
       <Container>
@@ -70,9 +75,13 @@ const Past = () => {
             <Price>260 ден</Price>
             <Text>Бесплатна достава низ цело Скопје</Text>
             <Counter>
-              <CounterButton>-</CounterButton>
-              <Quantity>1</Quantity>
-              <CounterButton>+</CounterButton>
+              <CounterButton onClick={() => dispatch(decrement())}>
+                -
+              </CounterButton>
+              <Quantity>{counter}</Quantity>
+              <CounterButton onClick={() => dispatch(increment())}>
+                +
+              </CounterButton>
             </Counter>
             <Button>Нарачај</Button>
           </OrderContainer>

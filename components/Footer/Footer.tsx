@@ -1,10 +1,14 @@
 import React from "react";
+import FooterBottom from "./FooterBottom";
+import Links from "./Links";
+import { FooterContainer } from "./styles";
 
 const Footer = () => {
   return (
-    <div style={{ height: "200px" }}>
-      <h1>Footer</h1>
-    </div>
+    <FooterContainer>
+      <Links />
+      <FooterBottom />
+    </FooterContainer>
   );
 };
 

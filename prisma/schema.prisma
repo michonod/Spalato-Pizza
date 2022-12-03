@@ -18,4 +18,5 @@ model Product {
   title       String
   priceTo     String
   priceFrom   String
+  price       String
 }
