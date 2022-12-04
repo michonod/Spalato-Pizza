@@ -1,9 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
-import amountReducer from "./useCart";
+import pastrmajlijaReducer from "./pastrmajlijaReducer";
 
 export const store = configureStore({
   reducer: {
-    amount: amountReducer,
+    pastrmajlija: pastrmajlijaReducer,
   },
 });
 

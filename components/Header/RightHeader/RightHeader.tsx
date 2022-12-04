@@ -7,15 +7,19 @@ import {
   SearchOutlined,
 } from "@ant-design/icons";
 import Logo from "./Logo";
-import { motion } from "framer-motion";
+import Link from "next/link";
 
 //this should be refactored
 const RightHeader = () => {
   return (
     <Container>
-      <Logo>
-        <UserOutlined style={{ fontSize: "20px" }} />
-      </Logo>
+      <Link href="/login">
+        <Logo>
+          <Tooltip title="Логирај се" placement="bottom">
+            <UserOutlined style={{ fontSize: "20px" }} />
+          </Tooltip>
+        </Logo>
+      </Link>
       <Logo>
         <Tooltip title="Види ја кошничката" placement="bottom">
           <CartNumber>0</CartNumber>
@@ -23,7 +27,9 @@ const RightHeader = () => {
         </Tooltip>
       </Logo>
       <Logo>
-        <SearchOutlined style={{ fontSize: "20px" }} />
+        <Tooltip title="Пребарувај" placement="bottom">
+          <SearchOutlined style={{ fontSize: "20px" }} />
+        </Tooltip>
       </Logo>
     </Container>
   );

@@ -44,7 +44,7 @@ export const ButtonContainer = styled.div`
 export const ButtonFlex = styled.div`
   margin: 10px 0;
 `;
-export const Button = styled.button`
+export const Button = styled.button<{ active?: boolean }>`
   padding: 8px 17px;
   margin: 5px;
   border-color: transparent;
@@ -52,12 +52,16 @@ export const Button = styled.button`
   font-size: 13px;
   letter-spacing: 0.3px;
   transition: all 0.2s ease;
+  background-color: #737373;
+  color: #f1f1f1;
   &:hover {
     background-color: #333333;
     color: white;
   }
   cursor: pointer;
+  background-color: ${(props) => (props.active ? "#333333" : "#737373")};
 `;
+
 export const Counter = styled.div`
   display: flex;
   justify-content: start;
