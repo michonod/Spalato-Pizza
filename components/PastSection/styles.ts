@@ -107,7 +107,7 @@ export const ImageContainer = styled.div`
 `;
 
 export const DivContainer = styled.div`
-  background-color: #888888;
+  background-color: #155d30;
   padding: 30px 0;
   margin-top: 50px;
 `;

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const FooterContainer = styled.div`
-  height: 300px;
+  height: 100px;
   background-color: #333333;
 `;
 
@@ -17,6 +17,7 @@ export const LinksContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 800px;
+  cursor: pointer;
 `;
 
 export const Link = styled.a`
@@ -33,11 +34,11 @@ export const BottomWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   text-align: center;
-  padding: 20px;
+  padding: 10px;
 `;
 
 export const BottomContainer = styled.div`
-  margin: 0 40px;
+  margin: 0 10px;
   display: flex;
 `;
 
@@ -51,6 +52,7 @@ export const Icon = styled.div`
   height: 50px;
   width: 50px;
   font-size: 25px;
+  cursor: pointer;
   &:hover {
     color: white;
   }
