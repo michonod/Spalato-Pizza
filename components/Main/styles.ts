@@ -23,12 +23,12 @@ export const H1 = styled.h1`
 export const H1Big = styled(H1)`
   font-size: 80px;
   font-weight: 500;
-  color: #008080;
+  color: rgb(172 255 156 / 77%);
 `;
 
 export const H1Bold = styled(H1Big)`
   font-weight: 800;
-  color: #008069;
+  color: #56c9b4e0;
   font-size: 75px;
 `;
 export const H3 = styled.h3`

@@ -5,11 +5,18 @@ export const CardContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 250px;
-  background-color: honeydew;
+  background-color: #f7fcffab;
   position: relative;
-  border: 1px solid #eee;
+  border: 1px solid #eeeeee;
   border-radius: 4px;
   margin: 10px;
+  box-shadow: 10px 10px 10px 1px rgba(227, 227, 221);
+  :hover {
+    background-color: rgb(233 233 233 / 71%);
+    transform: translateY(2px);
+    transition: 0.3s box-shadow ease-in, 0.2s transform ease-in;
+    box-shadow: 10px 10px 4px 0px rgba(217, 217, 217, 0.71);
+  }
 `;
 
 export const Flex = styled.div`
@@ -37,19 +44,28 @@ export const AbsoluteContainer = styled.div`
   right: 5px;
 `;
 export const Button = styled.button`
-  display: inline-block;
   justify-content: center;
   align-items: center;
   text-transform: uppercase;
-  border-radius: 20px;
-  padding: 5px 12px;
-  font-weight: 600;
-  background-color: #333333;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  background-color: #333333cf;
   color: #ffffff;
   border: none;
   font-size: 13px;
   margin-top: 15px;
   border: none;
+  cursor: pointer;
+  :hover {
+    transition: 0.2s background ease-in, 0.2s transform ease-in;
+    background: #333333;
+    transform: translateY(-2px);
+  }
+  :active {
+    transform: translateY(1px);
+  }
 `;
 export const Text = styled.p`
   text-align: center;
