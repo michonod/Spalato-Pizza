@@ -6,25 +6,20 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 100vh;
-  background-color: #787878;
 `;
 export const Form = styled.form`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  border: 1px solid #333;
   padding: 60px 20px;
   position: relative;
 `;
 export const Input = styled.input`
   width: 400px;
-  height: 30px;
+  height: 35px;
   padding: 5px;
   border-radius: 4px;
-  border: none;
-  outline: none;
 `;
 export const Label = styled.label`
   margin: 20px 0;
@@ -39,6 +34,7 @@ export const Checkbox = styled.input`
   width: 15px;
   height: 15px;
   margin-right: 5px;
+  cursor: pointer;
 `;
 export const CheckboxLabel = styled.label``;
 

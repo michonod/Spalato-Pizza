@@ -41,6 +41,15 @@ const Past = () => {
   });
   const dispatch = useDispatch();
 
+  // const { addon, counter, size, type } = selector;
+  const description = `${selector.type === "chicken" ? "Пилешка" : "Свинска"} ${
+    selector.size === "small" ? "мала" : "голема"
+  } ${selector.addon === "" ? "без додаток" : "со"} ${
+    selector.addon === "cheese 100gr" ? "100 гр. кашкавал" : ""
+  }${selector.addon === "cheese 50gr" ? "50 гр. кашкавал" : ""}${
+    selector.addon === "egg" ? "јајце" : ""
+  }: ${selector.type === "chicken" ? "Пилешко" : "Свинско"} месо, феферони`;
+
   return (
     <DivContainer>
       <Container>
@@ -131,11 +140,10 @@ const Past = () => {
                 </ButtonFlex>
               </ButtonContainer>
             </ChoiseContainer>
-            <Text>Пилешка мала без додаток: Пилешко месо, феферони</Text>
+            <Text>{description}</Text>
           </FlexContainer>
           <OrderContainer>
             <Price>260 ден</Price>
-            <Text>Бесплатна достава низ цела Битола</Text>
             <Counter>
               <CounterButton onClick={() => dispatch(decrement())}>
                 -

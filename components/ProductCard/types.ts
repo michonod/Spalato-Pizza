@@ -9,4 +9,6 @@ export type ProductTypes = {
   description: string;
   currency: string;
   key?: string;
+  onCardClick?: () => void;
+  onButtonClick?: () => void;
 };

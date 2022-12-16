@@ -24,10 +24,12 @@ const ProductCard = ({
   title,
   icon,
   currency,
+  onCardClick,
+  onButtonClick,
 }: ProductTypes) => {
   return (
     <>
-      <CardContainer>
+      <CardContainer onClick={onCardClick} role="button">
         <ImageContainer>
           <Image width={220} height={220} src={image} alt="pizza" />
         </ImageContainer>
@@ -41,7 +43,7 @@ const ProductCard = ({
         <TextContainer>
           <Title>{title}</Title>
           <Text>{description}</Text>
-          <Button>Нарачај веднаш</Button>
+          <Button onClick={onButtonClick}>Нарачај веднаш</Button>
         </TextContainer>
       </CardContainer>
     </>

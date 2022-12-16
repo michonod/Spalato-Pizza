@@ -9,13 +9,14 @@ export const Nav = styled.nav`
 `;
 export const Ul = styled.ul`
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
-  margin: 0 200px;
+  margin: 0 300px;
 `;
 export const Li = styled.li`
   list-style-type: none;
   margin-left: 5px;
+  font-weight: 500;
 `;
 export const A = styled.a``;
 

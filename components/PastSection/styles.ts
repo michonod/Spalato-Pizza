@@ -13,6 +13,7 @@ export const FlexContainer = styled.div`
 export const Title = styled.h3`
   font-size: 35px;
   margin: 0;
+  font-weight: 600;
 `;
 export const Price = styled.span`
   font-size: 30px;
@@ -43,6 +44,7 @@ export const ButtonContainer = styled.div`
 
 export const ButtonFlex = styled.div`
   margin: 10px 0;
+  margin-left: 100px;
 `;
 export const Button = styled.button<{ active?: boolean }>`
   padding: 8px 17px;
@@ -64,33 +66,34 @@ export const Button = styled.button<{ active?: boolean }>`
 
 export const Counter = styled.div`
   display: flex;
-  justify-content: start;
-  align-items: flex-start;
-  width: 300px;
-  width: fit-content;
+  justify-content: space-between;
+  width: 150px;
   padding: 10px;
   border-radius: 10px;
   margin: 20px 0;
-  border: 1px solid white;
-  color: white;
+  border: 1px solid #e4fcef;
+  color: #e4fcef;
 `;
 export const Quantity = styled.p`
-  margin: 10px;
+  margin: auto;
 `;
 export const CounterButton = styled.div`
   display: block;
   height: 40px;
   width: 40px;
   border-radius: 50%;
-  border: 1px solid white;
+  border: 1px solid #e4fcef;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
+  color: #e4fcef;
   font-size: 16px;
+  cursor: pointer;
   :hover {
-    background-color: #2f1650;
+    background-color: #333333;
+    color: white;
   }
+  /* margin: 0 10px; */
 `;
 export const OrderContainer = styled.div`
   display: flex;
@@ -107,7 +110,7 @@ export const ImageContainer = styled.div`
 `;
 
 export const DivContainer = styled.div`
-  background-color: #155d30;
+  background-color: #347c4f;
   padding: 30px 0;
   margin-top: 50px;
 `;
