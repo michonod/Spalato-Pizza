@@ -7,10 +7,13 @@ import { PrismaClient } from "@prisma/client";
 export async function getServerSideProps() {
   const prisma = new PrismaClient();
 
-  const prismaData = prisma.product.findMany();
+  const products = await prisma.product.findMany();
+  const users = await prisma.users.findMany();
+
+  console.log(users);
 
   return {
-    props: { prismaData }, // will be passed to the page component as props
+    props: { products, users }, // will be passed to the page component as props
   };
 }
 
@@ -20,7 +23,6 @@ type SectionType = {
 };
 
 const ProductSection = ({ title, data, prismaData }: SectionType) => {
-  console.log(prismaData);
   return (
     <Container>
       <Heading>{title}</Heading>

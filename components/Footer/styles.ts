@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const FooterContainer = styled.div`
   height: 100px;
   background-color: #333333;
+  margin-top: 20px;
 `;
 
 export const Div = styled.div`
@@ -25,7 +26,8 @@ export const Link = styled.a`
   text-transform: uppercase;
   font-weight: 600;
   :hover {
-    color: black;
+    color: #fff;
+    opacity: 0.6;
   }
 `;
 
@@ -44,6 +46,8 @@ export const BottomContainer = styled.div`
 
 export const Text = styled.p`
   font-size: 10px;
+  margin-right: 10px;
+  color: white;
 `;
 
 export const MediaContainer = styled.div``;
@@ -52,8 +56,10 @@ export const Icon = styled.div`
   height: 50px;
   width: 50px;
   font-size: 25px;
+  color: white;
   cursor: pointer;
   &:hover {
-    color: white;
+    color: #fff;
+    opacity: 0.6;
   }
 `;

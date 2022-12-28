@@ -62,3 +62,17 @@ export const Close = styled(CloseCircleOutlined)`
     color: #333333;
   }
 `;
+
+export const RegisterBtn = styled(Button)`
+  border-radius: 8px;
+  margin-top: 10px;
+  padding: 8px 30px;
+  border: 1px solid #e1e1e1;
+  cursor: pointer;
+  background: white;
+  transition: 0.3s all ease-in;
+  :hover {
+    background-color: #e2e2e2;
+    border: 1px solid black;
+  }
+`;

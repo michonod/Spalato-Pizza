@@ -11,14 +11,16 @@ import Scrollbars from "react-custom-scrollbars-2";
 export async function getStaticProps() {
   const prisma = new PrismaClient();
   const products = await prisma.product.findMany();
+  const users = await prisma.users.findMany();
 
   return {
-    props: { products },
+    props: { products, users },
   };
 }
 
-export default function Home(products: ProductTypes) {
+export default function Home(products: ProductTypes, users) {
   console.log(products);
+  console.log(users);
   return (
     <div style={{ height: "100vh" }}>
       <Scrollbars universal={true} autoHide>

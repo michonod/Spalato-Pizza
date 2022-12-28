@@ -16,7 +16,18 @@ model Product {
   description String
   tags        String
   title       String
-  priceTo     String
-  priceFrom   String
+  price_to    String @default("0")
+  price_from  String @default("0")
   price       String
+}
+
+model Users {
+  id         String  @id @default(uuid())
+  username   String
+  password   String
+  email      String
+  admin      Boolean
+  birth_date String
+  address    String
+  sex        String
 }
