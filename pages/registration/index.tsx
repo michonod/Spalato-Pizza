@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { InferGetStaticPropsType } from "next";
 import { PrismaClient } from "@prisma/client";
+import { Button, Form, Input, Label } from "./styles";
+import { useRouter } from "next/router";
 
 const prisma = new PrismaClient();
 
@@ -14,7 +16,7 @@ export const getServerSideProps = async () => {
 const Registration = ({
   users,
 }: InferGetStaticPropsType<typeof getServerSideProps>) => {
-  console.log(users);
+  const router = useRouter();
   const [firstName, setFirstName] = useState<string>();
   const [lastName, setLastName] = useState<string>();
   const [username, setUsername] = useState<string>();
@@ -25,11 +27,10 @@ const Registration = ({
   const [address, setAddress] = useState<string>();
   const [message, setMessage] = useState<string>();
   return (
-    <form
+    <Form
       onSubmit={async (e) => {
         e.preventDefault();
         const userExist = users.find((user) => user.email === email);
-        console.log(userExist);
         if (userExist) {
           setMessage("User email already exist");
           return;
@@ -48,47 +49,69 @@ const Registration = ({
             address,
           }),
         });
+        router.push("/");
       }}
     >
-      <input
+      <Label htmlFor="first name">First name</Label>
+      <Input
         type="text"
         name="First name"
+        id="first name"
         onChange={(e) => setFirstName(e.target.value)}
       />
-      <input
+      <Label htmlFor="last name">Last name</Label>
+      <Input
         type="text"
         name="Last name"
+        id="last name"
         onChange={(e) => setLastName(e.target.value)}
       />
-      <input
+      <Label htmlFor="username">Username</Label>
+      <Input
         type="text"
         name="Username"
+        id="username"
         onChange={(e) => setUsername(e.target.value)}
       />
-      <input
+      <Label htmlFor="email">Email</Label>
+      <Input
         type="email"
         name="Email"
+        id="email"
         onChange={(e) => setEmail(e.target.value)}
       />
-      <input
+      <Label htmlFor="password">Password</Label>
+      <Input
         type="password"
         name="Password"
+        id="password"
         onChange={(e) => setPassword(e.target.value)}
       />
-      <input
+      <Label htmlFor="date">Date of birth</Label>
+      <Input
         type="date"
+        id="date"
         name="Birth date"
         onChange={(e) => setBirth(new Date(e.target.value))}
       />
-      <input type="text" name="Sex" onChange={(e) => setSex(e.target.value)} />
-      <input
+      {/* here make a radiobuttons */}
+      <Label htmlFor="sex">Sex</Label>
+      <Input
+        type="text"
+        name="Sex"
+        id="sex"
+        onChange={(e) => setSex(e.target.value)}
+      />
+      <Label htmlFor="address">Address</Label>
+      <Input
         type="text"
         name="Address"
+        id="address"
         onChange={(e) => setAddress(e.target.value)}
       />
-      <button type="submit">Submit</button>
+      <Button type="submit">Submit</Button>
       <h1>{message}</h1>
-    </form>
+    </Form>
   );
 };
 

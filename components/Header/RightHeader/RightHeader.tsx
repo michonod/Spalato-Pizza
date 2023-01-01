@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { CartNumber, Container, LoginModal } from "./styles";
-import { Tooltip } from "antd";
+import { Button, Tooltip } from "antd";
 import {
   UserOutlined,
   ShoppingCartOutlined,
@@ -9,11 +9,15 @@ import {
 import Logo from "./Logo";
 import Link from "next/link";
 import LoginForm from "../../Login/LoginForm";
+import { InferGetStaticPropsType } from "next";
+import { getStaticProps } from "../../../pages";
 
 //this should be refactored
-const RightHeader = () => {
+const RightHeader = ({
+  users,
+}: InferGetStaticPropsType<typeof getStaticProps>) => {
   const [showModal, setShowModal] = useState(false);
-  const handleOk = () => setShowModal(false);
+
   const handleCancel = () => setShowModal(false);
   return (
     <Container>
@@ -27,12 +31,17 @@ const RightHeader = () => {
       <LoginModal
         title="Логирај се"
         open={showModal}
-        onOk={handleOk}
         onCancel={handleCancel}
-        cancelText="Затвори"
-        okText="Логирај се"
+        footer={[
+          <Button form="login" key="submit" type="default" htmlType="submit">
+            Логирај се
+          </Button>,
+        ]}
       >
-        <LoginForm />
+        <LoginForm
+          users={users}
+          showModal={(showModal) => setShowModal(showModal)}
+        />
       </LoginModal>
       <Logo>
         <Tooltip title="Види ја кошничката" placement="bottom">
