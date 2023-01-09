@@ -20,6 +20,7 @@ export default async function Registration(
       password,
       sex,
       username,
+      logged_in: false
     },
   });
   if (!req.body) {

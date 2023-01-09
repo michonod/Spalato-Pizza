@@ -30,4 +30,5 @@ model Users {
   birth_date String
   address    String
   sex        String
+  logged_in  Boolean @default(false)
 }
