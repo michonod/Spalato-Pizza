@@ -30,7 +30,7 @@ const LinkData: { name: string; link: string; key: string }[] = [
   },
 ];
 
-const Links = () => {
+export const Links = () => {
   return (
     <Div>
       <LinksContainer>
@@ -42,4 +42,3 @@ const Links = () => {
   );
 };
 
-export default Links;

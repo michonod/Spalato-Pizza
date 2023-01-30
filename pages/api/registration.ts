@@ -9,7 +9,7 @@ export default async function Registration(
   console.log(req.body);
   const data = req.body;
   const { address, email, username, password, sex, birth } = JSON.parse(
-    req.body
+    data
   );
   await prisma.users.create({
     data: {

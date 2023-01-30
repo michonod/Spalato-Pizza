@@ -2,7 +2,6 @@ import React from "react";
 import { Li, Nav, Ul, Menu, ImageContainer } from "./styles";
 import { v4 } from "uuid";
 import Image from "next/image";
-import Svg from "../../public/soda.svg";
 
 const NavList = [
   { title: "Пица", id: v4(), image: "/pizzanav.png" },

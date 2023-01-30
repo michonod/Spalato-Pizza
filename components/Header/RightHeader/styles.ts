@@ -4,8 +4,8 @@ import styled from "styled-components";
 export const Container = styled.div`
   border-radius: 30px;
   background-color: #f7fcffab;
-  width: 150px;
   height: 50px;
+  padding: 10px;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -40,6 +40,7 @@ export const IconWrapper = styled.div`
   justify-content: center;
   align-items: center;
   padding: 10px;
+  margin-right: 10px;
   &:hover {
     background-color: #ffffff;
   }

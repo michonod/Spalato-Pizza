@@ -5,6 +5,7 @@ import Logo from "./Logo/Logo";
 import OrderButton from "./OrderButton/OrderButton";
 import RightHeader from "./RightHeader/RightHeader";
 import { HeaderContainer } from "./styles";
+import { LanguageSwitch } from "./Switch/Switch";
 
 const Header = ({ users }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
@@ -12,6 +13,7 @@ const Header = ({ users }: InferGetStaticPropsType<typeof getStaticProps>) => {
       <OrderButton />
       <Logo />
       <RightHeader users={users} />
+      <LanguageSwitch />
     </HeaderContainer>
   );
 };

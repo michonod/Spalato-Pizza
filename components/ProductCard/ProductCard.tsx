@@ -14,7 +14,7 @@ import {
   TextContainer,
 } from "./styles";
 import { ProductTypes } from "./types";
-import { getPrice } from "../../utils/getPrice";
+import { getPrice } from "@utils";
 
 const ProductCard = ({
   description,

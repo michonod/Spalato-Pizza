@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Past from "../components/PastSection/Past";
-import ProductSection from "../components/ProductSection/ProductSection";
+import { ProductSection } from "@components";
 import Main from "../components/Section/Main";
 import { FakeData } from "../assets/mockData";
 import Footer from "../components/Footer/Footer";
@@ -23,8 +23,6 @@ export default function Home({
   products,
   users,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
-  console.log(products);
-  console.log(users);
   return (
     <div style={{ height: "100vh" }}>
       <Scrollbars universal={true} autoHide>
