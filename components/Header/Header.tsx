@@ -13,7 +13,6 @@ const Header = ({ users }: InferGetStaticPropsType<typeof getStaticProps>) => {
       <OrderButton />
       <Logo />
       <RightHeader users={users} />
-      <LanguageSwitch />
     </HeaderContainer>
   );
 };

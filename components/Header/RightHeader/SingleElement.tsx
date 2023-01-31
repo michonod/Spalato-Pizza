@@ -11,9 +11,11 @@ type SingleElement = {
 }
 
 export const SingleElement = ({ icon, link, title, onClick }: SingleElement) => {
-    return <Logo>
+    return <Logo onClick={onClick} >
         <Tooltip title={title} placement="bottom">
-            {icon}
+            <div style={{ fontSize: '20px', borderRadius: '50%', height: '20px', width: '20px', cursor: 'pointer' }}>
+                {icon}
+            </div>
         </Tooltip>
     </Logo>
 }
