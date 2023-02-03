@@ -1,11 +1,13 @@
 import React from "react";
 import { ButtonContainer, Telephone, Text } from "./styles";
 import { PhoneFilled } from "@ant-design/icons";
+import { useTranslation } from "react-i18next";
 
 const OrderButton = () => {
+  const { t } = useTranslation()
   return (
     <ButtonContainer>
-      <Text>Нарачки онлајн или на</Text>
+      <Text>{t('orders')}</Text>
       <Telephone href="tel:075274395">
         <PhoneFilled /> 075 274 395
       </Telephone>

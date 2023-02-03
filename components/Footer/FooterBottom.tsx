@@ -1,6 +1,7 @@
 import React from "react";
 import { BottomContainer, BottomWrapper, Icon, Text } from "./styles";
 import { InstagramOutlined, FacebookOutlined } from "@ant-design/icons";
+import { useTranslation } from "react-i18next";
 
 const socialMedia: { name: string; url: string; icon: JSX.Element }[] = [
   {
@@ -16,6 +17,7 @@ const socialMedia: { name: string; url: string; icon: JSX.Element }[] = [
 ];
 
 const FooterBottom = () => {
+  const { t } = useTranslation()
   return (
     <BottomWrapper>
       <BottomContainer>
@@ -23,7 +25,7 @@ const FooterBottom = () => {
           <Icon key={item.name}>{item.icon}</Icon>
         ))}
       </BottomContainer>
-      <Text>Пицерија Spalato © 2023 Сите права се задржани!</Text>
+      <Text>{t("rightsReserved")}</Text>
     </BottomWrapper>
   );
 };

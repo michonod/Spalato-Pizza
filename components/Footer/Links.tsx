@@ -1,41 +1,43 @@
 import React from "react";
 import { Div, Link, LinksContainer } from "./styles";
 import { v4 } from "uuid";
+import { useTranslation } from "react-i18next";
 
 const LinkData: { name: string; link: string; key: string }[] = [
   {
-    name: "Пица",
+    name: "pizza",
     link: "#pizza",
     key: v4(),
   },
   {
-    name: "Пастрмајлија",
+    name: "pastrmajlija",
     link: "#pastrmajlija",
     key: v4(),
   },
   {
-    name: "Сендвичи",
+    name: "sandwiches",
     link: "#sandwiches",
     key: v4(),
   },
   {
-    name: "Десерт",
+    name: "desert",
     link: "#dessert",
     key: v4(),
   },
   {
-    name: "Пијалоци",
+    name: "drinks",
     link: "#drinks",
     key: v4(),
   },
 ];
 
 export const Links = () => {
+  const { t } = useTranslation()
   return (
     <Div>
       <LinksContainer>
         {LinkData.map((link) => (
-          <Link key={link.key}>{link.name}</Link>
+          <Link key={link.key}>{t(link.name)}</Link>
         ))}
       </LinksContainer>
     </Div>
