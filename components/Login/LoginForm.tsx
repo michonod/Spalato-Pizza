@@ -39,13 +39,13 @@ const LoginForm = ({
         (user.username === username && user.password === password)
     );
 
-    console.log(findUser)
-    findUser && await fetch('/api/login', {
-      method: 'POST',
-      body: JSON.stringify({
-        ...findUser
-      })
-    })
+    findUser &&
+      (await fetch("/api/login", {
+        method: "POST",
+        body: JSON.stringify({
+          ...findUser,
+        }),
+      }));
     findUser && showModal(false);
     !findUser
       ? setMessage("Wrong password or email, try again!")
@@ -55,19 +55,24 @@ const LoginForm = ({
 
   return (
     <Container>
-      <Form onSubmit={submitHandler} id="login" action="/api/login" method="POST">
+      <Form
+        onSubmit={submitHandler}
+        id="login"
+        action="/api/login"
+        method="POST"
+      >
         <Label>Корисничко име или емаил адреса</Label>
         <Input
           type="text"
           value={username}
-          name='username'
+          name="username"
           onChange={(e) => setUsername(e.target.value)}
         />
         <Label>Лозинка</Label>
         <Input
           type="password"
           value={password}
-          name='password'
+          name="password"
           onChange={(e) => setPassword(e.target.value)}
         />
         <CheckboxContainer>
@@ -76,7 +81,7 @@ const LoginForm = ({
         </CheckboxContainer>
         <Link href="/new-password">Ја заборави лозинката?</Link>
         <Link href="/registration">Регистрирај се</Link>
-        <p style={{ color: "red" }}> {message}</p>
+        <p style={{ color: "red" }}>{message}</p>
       </Form>
     </Container>
   );

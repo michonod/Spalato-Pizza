@@ -68,11 +68,15 @@ const RightHeader = ({
       </Drawer>
       {headerObject.map((item) => {
         const title = t(item.title as string);
+        const handlersMap = new Map<string, () => void>([
+          ["login", modalOpenHandler],
+          ["settings", drawerOpenHandler],
+        ]);
         return (
           <SingleElement
             icon={item.icon}
             title={title}
-            onClick={item.onClick}
+            onClick={handlersMap.get(item.title || "")}
             isCart={item.title === "cart"}
             key={item.id}
           />
