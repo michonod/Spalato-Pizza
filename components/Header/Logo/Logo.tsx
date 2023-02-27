@@ -1,4 +1,3 @@
-import Image from "next/image";
 import React from "react";
 import Lottie from "lottie-react";
 import Pizza from "../../../public/pizza.json";

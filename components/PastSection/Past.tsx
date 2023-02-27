@@ -30,6 +30,8 @@ import {
   type,
   addon,
 } from "../../assets/store/pastrmajlijaReducer";
+import { useTranslation } from "react-i18next";
+import { description } from "./utils/pastHelpers";
 const Past = () => {
   const selector = useSelector((state: RootState) => {
     return {
@@ -40,15 +42,7 @@ const Past = () => {
     };
   });
   const dispatch = useDispatch();
-
-  // const { addon, counter, size, type } = selector;
-  const description = `${selector.type === "chicken" ? "Пилешка" : "Свинска"} ${
-    selector.size === "small" ? "мала" : "голема"
-  } ${selector.addon === "" ? "без додаток" : "со"} ${
-    selector.addon === "cheese 100gr" ? "100 гр. кашкавал" : ""
-  }${selector.addon === "cheese 50gr" ? "50 гр. кашкавал" : ""}${
-    selector.addon === "egg" ? "јајце" : ""
-  }: ${selector.type === "chicken" ? "Пилешко" : "Свинско"} месо, феферони`;
+  const { t } = useTranslation();
 
   return (
     <DivContainer>
@@ -58,27 +52,27 @@ const Past = () => {
         </ImageContainer>
         <Div>
           <FlexContainer>
-            <Title>Пастрмајлија</Title>
-            <Text>Алергени- млеко, јајца, житни култури</Text>
+            <Title>{t("pastrmajlija")}</Title>
+            <Text>{t("allergens")}</Text>
             <Price>260 ден - 450 ден</Price>
-            <TextBold>Бесплатна достава низ цела Битола</TextBold>
+            <TextBold>{t("freeDelivery")}</TextBold>
             <ChoiseContainer>
               <ButtonContainer>
-                <Text>Големина</Text>
+                <Text>{t("size")}</Text>
                 <ButtonFlex>
                   <Button
                     onClick={() => dispatch(size("small"))}
                     value="small"
                     active={selector.size === "small"}
                   >
-                    Малa
+                    {t("small")}
                   </Button>
                   <Button
                     onClick={() => dispatch(size("large"))}
                     value="large"
                     active={selector.size === "large"}
                   >
-                    Голема
+                    {t("big")}
                   </Button>
                 </ButtonFlex>
               </ButtonContainer>
@@ -90,14 +84,14 @@ const Past = () => {
                     onClick={() => dispatch(type("chicken"))}
                     value="chicken"
                   >
-                    Пилешка
+                    {t("chicken")}
                   </Button>
                   <Button
                     active={selector.type === "pork"}
                     onClick={() => dispatch(type("pork"))}
                     value="pork"
                   >
-                    Свинска
+                    {t("pork")}
                   </Button>
                 </ButtonFlex>
               </ButtonContainer>
@@ -140,7 +134,7 @@ const Past = () => {
                 </ButtonFlex>
               </ButtonContainer>
             </ChoiseContainer>
-            <Text>{description}</Text>
+            <Text>{description(selector)}</Text>
           </FlexContainer>
           <OrderContainer>
             <Price>260 ден</Price>

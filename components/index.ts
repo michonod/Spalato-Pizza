@@ -1,2 +1,2 @@
-export * from './Footer'
-export * from './ProductSection'
+export * from "./Footer";
+export * from "./ProductSection";

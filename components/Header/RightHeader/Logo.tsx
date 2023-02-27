@@ -1,10 +1,6 @@
-import React, { ReactNode } from "react";
+import React from "react";
+import { LogoProps } from "../types";
 import { IconWrapper } from "./styles";
-
-type LogoProps = {
-  children: JSX.Element;
-  onClick?: () => void
-};
 
 const Logo = ({ children, onClick }: LogoProps) => {
   return <IconWrapper onClick={onClick}>{children}</IconWrapper>;

@@ -10,7 +10,6 @@ export async function getServerSideProps() {
   const products = await prisma.product.findMany();
   const users = await prisma.users.findMany();
 
-
   return {
     props: { products, users }, // will be passed to the page component as props
   };
@@ -21,7 +20,7 @@ type SectionType = {
   data: ProductTypes[];
 };
 
-export const ProductSection = ({ title, data, prismaData }: SectionType) => {
+export const ProductSection = ({ title, data }: SectionType) => {
   return (
     <Container>
       <Heading>{title}</Heading>
@@ -51,4 +50,3 @@ export const ProductSection = ({ title, data, prismaData }: SectionType) => {
     </Container>
   );
 };
-

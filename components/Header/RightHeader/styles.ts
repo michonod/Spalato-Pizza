@@ -61,3 +61,17 @@ export const CartNumber = styled.div`
   top: 0;
   right: 0;
 `;
+
+export const Div = styled.div`
+  display: flex;
+  margin-top: 30px;
+  justify-content: space-between;
+`;
+
+export const IconDiv = styled.div`
+  font-size: 20px;
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+`;

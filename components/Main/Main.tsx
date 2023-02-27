@@ -10,15 +10,17 @@ import {
 } from "./styles";
 import Lottie from "lottie-react";
 import Chef from "../../public/chef.json";
+import { useTranslation } from "react-i18next";
 
 const Main = () => {
+  const { t } = useTranslation()
   return (
     <MainContainer>
       <TextContainer>
-        <H1>Брза и бесплатна</H1>
-        <H1Big>достава низ</H1Big>
-        <H1Bold>цела битола!</H1Bold>
-        <H3>без минимум лимит за нарачка!</H3>
+        <H1>{t('fastAndFree')}</H1>
+        <H1Big>{t('delivery')}</H1Big>
+        <H1Bold>{t('wholeCity')}</H1Bold>
+        <H3>{t('noLimit')}</H3>
       </TextContainer>
       <AnimationContainer>
         <Lottie animationData={Chef} loop={true} />
